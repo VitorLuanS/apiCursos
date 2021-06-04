@@ -23,11 +23,5 @@ public class CursosServices implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         
-        var curso = new Cursos("Inglês");
-        repository.save(curso);
-        var findCursos = repository.findAll();
-        System.out.println(findCursos);
-
-  
     }
 }
