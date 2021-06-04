@@ -32,7 +32,6 @@ public class Cursos {
     @Column(name = "dataInicio", length = 50, nullable = true)
     private String dataInicio;
     
-    @Column(name = "valor", precision = 2, nullable = true)
     private float valor;
     
     
