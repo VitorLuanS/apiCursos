@@ -14,8 +14,8 @@
 	<name>apiCursos</name>
 	<description>Api dos Cursos</description>
 	<properties>
-		<java.version>11</java.version>
-	</properties>
+        	<java.version>1.8</java.version>
+    	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
