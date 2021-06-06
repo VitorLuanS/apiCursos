@@ -5,16 +5,28 @@
  */
 package com.api.cursos.Controller;
 
+import com.api.cursos.Models.Cursos;
+import com.api.cursos.Repository.CursosRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class CursosControler {
     
-    @RequestMapping("/cursos")
-    public String cursos(ModelMap model){
-        model.addAttribute("Curso", "Deu Certo! To Certo!");
+    @Autowired
+    private CursosRepository repository;
+     
+    @RequestMapping(value="/cursos", method = RequestMethod.GET)
+    public String form(ModelMap model){
         return "Events/Cursos";
+    }
+    
+    @RequestMapping(value="/cursos", method = RequestMethod.POST)
+    public String form(Cursos curso){
+        repository.save(curso);
+        return "redirect:/cursos";
     }
 }
