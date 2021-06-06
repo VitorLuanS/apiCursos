@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+ <html>
+    <head>
+        <title>Cursos</title>
+        <!--Import Google Icon Font-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form method="post">
+            <div>
+                Nome do Curso:
+                <input placeholder="Nome do Curso" value="" name="nome" type="text"/>
+                Data de Cadastro:
+                <input placeholder="Data de Cadastro" value="" name="dataCadastro" type="date"/>
+                Data de Início:
+                <input placeholder="Data de Inicio" value="" name="dataInicio" type="date"/>
+                Valor:
+                <input placeholder="0.00" value="" step="0.01" name="valor" type="number"/> 
+            </div>
+            
+            <div>
+                Descrição:
+                <textarea  value="" name="descricao" type="text" maxlength="255">
+
+                </textarea>
+                Ementa: 
+                <textarea  placeholder="Ementa" value="" name="ementa" type="text" maxlength="255">
+
+                </textarea>
+            </div>
+            <button type="submit" >Cadastrar</button>
+        </form>
+    </body>
+</html>
