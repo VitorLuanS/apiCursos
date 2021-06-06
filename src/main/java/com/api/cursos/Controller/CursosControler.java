@@ -21,7 +21,7 @@ public class CursosControler {
      
     @RequestMapping(value="/cursos", method = RequestMethod.GET)
     public String form(ModelMap model){
-        return "Events/Cursos";
+        return "Cursos/index";
     }
     
     @RequestMapping(value="/cursos", method = RequestMethod.POST)
