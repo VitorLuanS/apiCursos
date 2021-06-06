@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CursosControler {
@@ -19,14 +20,24 @@ public class CursosControler {
     @Autowired
     private CursosRepository repository;
      
-    @RequestMapping(value="/cursos", method = RequestMethod.GET)
+    @RequestMapping(value="/CadastrarCursos", method = RequestMethod.GET)
     public String form(ModelMap model){
-        return "Cursos/index";
+        return "Cursos/CadastrarCurso";
     }
     
-    @RequestMapping(value="/cursos", method = RequestMethod.POST)
+    @RequestMapping(value="/CadastrarCursos", method = RequestMethod.POST)
     public String form(Cursos curso){
         repository.save(curso);
-        return "redirect:/cursos";
+        return "redirect:/CadastrarCursos";
     }
+    
+    @RequestMapping("/cursos")
+    public ModelAndView list(){
+        ModelAndView mv = new ModelAndView("Cursos/Listagem");
+        Iterable<Cursos> cursos = repository.findAll();
+        
+        mv.addObject("cursos", cursos);
+        return mv;
+    }
+    
 }
