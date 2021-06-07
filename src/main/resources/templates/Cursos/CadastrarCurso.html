@@ -2,35 +2,67 @@
 
  <html>
     <head>
-        <title>Cursos</title>
-        <!--Import Google Icon Font-->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Cursos</title>
+      <link type="text/css" rel="stylesheet" href="css/style.css"/>
+      <link type="text/css" rel="stylesheet" href="css/formStyle.css"/>
+
+      <meta charset="UTF-8">
     </head>
     <body>
-        <form method="post">
-            <div>
-                Nome do Curso:
-                <input placeholder="Nome do Curso" value="" name="nome" type="text"/>
-                Data de Cadastro:
-                <input placeholder="Data de Cadastro" value="" name="dataCadastro" type="date"/>
-                Data de Início:
-                <input placeholder="Data de Inicio" value="" name="dataInicio" type="date"/>
-                Valor:
-                <input placeholder="0.00" value="" step="0.01" name="valor" type="number"/> 
+        <header class="background-white w-100 flex center margin-20-botton">
+             <a href="/" class="button-custom waves-effect waves-light">Inicio</a> 
+             <a href="/cursos" class="button-custom waves-effect waves-light">Ver Cursos</a>
+        </header>
+        <div style="display: flex; justify-content: center; align-items: center;">
+        <section class="w-50 color-container-white">
+            <div class="container-title">
+               <h1>Cadastrar Curso</h1>
             </div>
-            
-            <div>
-                Descrição:
-                <textarea  value="" name="descricao" type="text" maxlength="255">
-
-                </textarea>
-                Ementa: 
-                <textarea  placeholder="Ementa" value="" name="ementa" type="text" maxlength="255">
-
-                </textarea>
+            <form class="container w-50" method="post">
+                <div class="container-form">
+                    
+                    <div class="flex">
+                        <p style="width: 30%">Nome do Curso:</p>
+                        <input style="" class="input-custom" placeholder="Nome do Curso" value="" name="nome" type="text"/>
+                    </div>
+                    
+                    <div class="flex">
+                        <p style="width: 30%"> Data de Cadastro:</p>
+                        <input class="input-custom" placeholder="Data de Cadastro" value="" name="dataCadastro" type="date"/>
+                    </div>
+                    
+                    <div class="flex">
+                        <p style="width: 30%">Data de Início:</p>
+                        <input class="input-custom" placeholder="Data de Inicio" value="" name="dataInicio" type="date"/>
+                    </div>
+                    <div class="flex">
+                        <p style="width: 30%">Valor:</p>
+                        <input class="input-custom" placeholder="0.00" value="" step="0.01" name="valor" type="number"/> 
+                    </div>
+                    <div>
+                        <p>Descrição:</p>
+                        <textarea  style="resize: none" name="descricao" maxlength="255">
+                        </textarea>
+                    </div>
+                    
+                    <div>
+                        <p>Ementa: </p>
+                        <textarea  style="resize: none" placeholder="Ementa"  name="ementa"  maxlength="255">
+                        </textarea>
+                    </div>
+                    <div class="w-100 flex center margin-20-top">
+                        <button class="waves-effect waves-light btn" type="submit">Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+       </section>
             </div>
-            <button type="submit" >Cadastrar</button>
-        </form>
-    </body>
+      </body>
 </html>
