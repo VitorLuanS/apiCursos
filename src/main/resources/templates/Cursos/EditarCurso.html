@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Editar Curso</title>
+        <meta charset="UTF-8">
+         <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="/css/style.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/formStyle.css"/>
+    </head>
+    <body>
+         <nav class="background-white w-100 flex center margin-20-botton">
+            <div class="nav-wrapper">
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a style="color: black" href="/">Inicio</a></li>
+                  <li><a style="color: black" href="/cursos">Ver Cursos</a></li>
+                  <li><a style="color: black" href="/CadastrarCurso">Cadastrar Cursos</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <section class="w-50 color-container-white border-radius-5px">
+                <div class="flex center">
+                   <h1>Editar Curso</h1>
+                </div>
+                <form class="container w-75" method="post">
+                    <div class="container-form">
+
+                        <div class="flex">
+                            <p style="width: 30%">Nome do Curso:</p>
+                            <input style="" class="input-custom" placeholder="Nome do Curso" th:value="${nome}" name="nome" type="text"/>
+                        </div>
+
+                        <div class="flex">
+                            <p style="width: 30%"> Data de Cadastro:</p>
+                            <input class="input-custom" placeholder="Data de Cadastro" th:value="${dataCadastro}" name="dataCadastro" type="date"/>
+                        </div>
+
+                        <div class="flex">
+                            <p style="width: 30%">Data de Início:</p>
+                            <input class="input-custom" placeholder="Data de Inicio" th:value="${dataInicio}" name="dataInicio" type="date"/>
+                        </div>
+                        <div class="flex">
+                            <p style="width: 30%">Valor:</p>
+                            <input class="input-custom" placeholder="0.00" th:value="${valor}" step="0.01" name="valor" type="number"/> 
+                        </div>
+                        <div>
+                            <p>Descrição:</p>
+                            <textarea  style="resize: none" placeholder="Descrição" th:text="${descricao}" name="descricao" maxlength="255"></textarea>
+                        </div>
+
+                        <div>
+                            <p>Ementa: </p>
+                            <textarea  style="resize: none" placeholder="Ementa" name="ementa"  th:text="${ementa}" maxlength="255"></textarea>
+                        </div>
+                        <div class="w-100 flex center margin-20-top">
+                            <a href="/cursos" class="waves-effect waves-light btn margin-20 cancel" type="submit">Cancelar</a>
+                            <button class="waves-effect waves-light btn margin-20 confirm" type="submit">Confirmar</button>
+                        </div>
+                    </div>
+                </form>
+                </section>
+            </div>
+    </body>
+</html>

@@ -23,7 +23,7 @@ public class Cursos {
     @Column(name = "descricao", length = 255, nullable = true)
     private String descricao;
     
-    @Column(name = "ementa", length = 50, nullable = true)
+    @Column(name = "ementa", length = 255, nullable = true)
     private String ementa;
     
     @Column(name = "dataCadastro", length = 50, nullable = true)
@@ -33,7 +33,6 @@ public class Cursos {
     private String dataInicio;
     
     private float valor;
-    
     
     @Deprecated
     public Cursos() {
@@ -142,6 +141,11 @@ public class Cursos {
         return "Curso{" +
                 "id=" + this.id +
                 ", name='" + this.nome + '\'' +
+                ", descricao='" + this.descricao + '\'' +
+                ", ementa='" + this.ementa + '\'' +
+                ", dataCadastro='" + this.dataCadastro + '\'' +
+                ", dataInicio='" + this.dataInicio + '\'' +
+                ", valor='" + this.valor + '\'' +
                 '}';
     }
 }

@@ -10,6 +10,7 @@ import com.api.cursos.Repository.CursosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,24 +21,51 @@ public class CursosControler {
     @Autowired
     private CursosRepository repository;
      
-    @RequestMapping(value="/CadastrarCursos", method = RequestMethod.GET)
-    public String form(ModelMap model){
+    @RequestMapping(value="/CadastrarCurso", method = RequestMethod.GET)
+    public String formCurso(ModelMap model){
         return "Cursos/CadastrarCurso";
     }
     
-    @RequestMapping(value="/CadastrarCursos", method = RequestMethod.POST)
-    public String form(Cursos curso){
+    @RequestMapping(value="/CadastrarCurso", method = RequestMethod.POST)
+    public String formCurso(Cursos curso){
         repository.save(curso);
-        return "redirect:/CadastrarCursos";
+        return "redirect:/CadastrarCurso";
     }
     
-    @RequestMapping("/cursos")
-    public ModelAndView list(){
-        ModelAndView mv = new ModelAndView("Cursos/Listagem");
+    @RequestMapping(value="/cursos",  method = RequestMethod.GET)
+    public ModelAndView listCurso(){
+        ModelAndView mv = new ModelAndView("Cursos/VerCursos");
         Iterable<Cursos> cursos = repository.findAll();
         
         mv.addObject("cursos", cursos);
         return mv;
     }
     
+    @RequestMapping(value="/cursos/delete/{id}", method = RequestMethod.POST)
+    public String removeCurso(@PathVariable Long id){
+        repository.deleteById(id);
+        return "redirect:/cursos"; 
+    }
+    
+    @RequestMapping(value="/edit/{id}", method = RequestMethod.GET)
+    public ModelAndView editCurso(@PathVariable Long id){
+        Cursos curso = repository.findById(id).get();
+        ModelAndView mv = new ModelAndView("Cursos/EditarCurso");
+        
+        mv.addObject("nome", curso.getNome());
+        mv.addObject("dataInicio", curso.getDataInicio());
+        mv.addObject("dataCadastro", curso.getDataCadastro());
+        mv.addObject("descricao", curso.getDescricao());
+        mv.addObject("ementa", curso.getEmenta());
+        mv.addObject("valor", curso.getValor());
+
+        return mv;
+    }
+    
+    @RequestMapping(value="/edit/{id}", method = RequestMethod.POST)
+    public String editCurso(Cursos newCurso){
+      
+        repository.save(newCurso);
+        return "redirect:/cursos";
+    }
 }

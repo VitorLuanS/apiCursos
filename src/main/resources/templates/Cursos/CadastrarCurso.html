@@ -2,30 +2,34 @@
 
  <html>
     <head>
-              <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-       
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Cursos</title>
-      <link type="text/css" rel="stylesheet" href="css/style.css"/>
-      <link type="text/css" rel="stylesheet" href="css/formStyle.css"/>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Cursos</title>
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
+        <link type="text/css" rel="stylesheet" href="css/formStyle.css"/>
 
-      <meta charset="UTF-8">
+        <meta charset="UTF-8">
     </head>
     <body>
-        <header class="background-white w-100 flex center margin-20-botton">
-             <a href="/" class="button-custom waves-effect waves-light">Inicio</a> 
-             <a href="/cursos" class="button-custom waves-effect waves-light">Ver Cursos</a>
-        </header>
+        <nav class="background-white w-100 flex center margin-20-botton">
+            <div class="nav-wrapper">
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a style="color: black" href="/">Inicio</a></li>
+                  <li><a style="color: black" href="/cursos">Ver Cursos</a></li>
+                  <li><a style="color: black" href="/CadastrarCurso">Cadastrar Cursos</a></li>
+                </ul>
+            </div>
+        </nav>
         <div style="display: flex; justify-content: center; align-items: center;">
         <section class="w-50 color-container-white border-radius-5px">
-            <div class="container-title">
+            <div class="flex center">
                <h1>Cadastrar Curso</h1>
             </div>
-            <form class="container w-50" method="post">
+            <form class="container w-75" method="post">
                 <div class="container-form">
                     
                     <div class="flex">
@@ -48,14 +52,12 @@
                     </div>
                     <div>
                         <p>Descrição:</p>
-                        <textarea  style="resize: none" name="descricao" maxlength="255">
-                        </textarea>
+                        <textarea  style="resize: none" placeholder="Descrição" name="descricao" maxlength="255"></textarea>
                     </div>
                     
                     <div>
                         <p>Ementa: </p>
-                        <textarea  style="resize: none" placeholder="Ementa"  name="ementa"  maxlength="255">
-                        </textarea>
+                        <textarea  style="resize: none" placeholder="Ementa"  name="ementa"  maxlength="255"></textarea>
                     </div>
                     <div class="w-100 flex center margin-20-top">
                         <button class="waves-effect waves-light btn" type="submit">Cadastrar</button>

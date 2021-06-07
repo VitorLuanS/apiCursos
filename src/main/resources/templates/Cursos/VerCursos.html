@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <!-- Compiled and minified JavaScript -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <link type="text/css" rel="stylesheet" href="css/style.css"/>
+      <link type="text/css" rel="stylesheet" href="css/listStyle.css"/>  
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Cursos</title>
+      <meta charset="UTF-8">
+    </head>
+    <body>
+        <nav class="background-white w-100 flex center margin-20-botton">
+            <div class="nav-wrapper">
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a style="color: black" href="/">Inicio</a></li>
+                  <li><a style="color: black" href="/cursos">Ver Cursos</a></li>
+                  <li><a style="color: black" href="/CadastrarCurso">Cadastrar Cursos</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <section class="container-table">
+          <table class="table-custom" >
+            <thead>
+                <th>Curso</th>
+                <th>Data de Cadastro</th>
+                <th>Data de Inicio</th>
+                <th>Descrição</th>
+                <th>Ementa</th>
+                <th>Valor</th>
+            </thead>
+            <tbody>
+                <tr th:each="curso : ${cursos}">
+                    <td style="width:10%"><span th:text="${curso.nome}"></span></td>
+                    <td style="width:15%"><span th:text="${curso.dataCadastro}"></span></td>
+                    <td style="width:15%"><span th:text="${curso.dataInicio}"></span></td>
+                    <td style="width:25%"><span th:text="${curso.descricao}"></span></td>
+                    <td style="width:25%"><span th:text="${curso.ementa}"></span></td>
+                    <td style="width:10%"><span th:text="${curso.valor}"></span></td>
+                    <td style="display: flex; width: 100%">
+                        <form action="#" th:method="delete" th:action="@{'/cursos/delete/{id}'(id=${curso.id})}"  >
+                            <button  type="submit" class="btn">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </form>
+                          
+                        <a th:href="@{'/edit/{id}'(id=${curso.id})}" class="btn">
+                            <i class="material-icons">edit</i>
+                        </a>
+      
+                    </td>
+                </tr>
+            </tbody>
+          </table>  
+        </section>
+        
+    </body>
+</html>
