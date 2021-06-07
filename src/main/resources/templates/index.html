@@ -6,13 +6,25 @@ and open the template in the editor.
 -->
 <html>
     <head>
+         <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
         <title>Cursos</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8"/>
     </head>
+
     <body>
-        <h1>Inicio</h1>
-        <a href="/cursos">Cursos</a>
-        <a href="/CadastrarCursos">Cadastrar Curso</a>
+        <section class="container">
+            <div>
+                <h1 class="h1-api" >Api Cursos</h1>
+                <div class="container-button">
+                    <a href="/cursos" class="button-custom waves-effect waves-light btn">Ver Cursos</a>
+                    <a href="/CadastrarCursos" class="button-custom waves-effect waves-light btn">Cadastrar Curso</a>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
